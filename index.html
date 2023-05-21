@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <div class="line"></div>
+            <img src="logo.png" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="scrollToSection('home')">Home</a></li>
+                    <li><a href="#" onclick="scrollToSection('about')">About</a></li>
+                    <li><a href="#" onclick="scrollToSection('services')">Services</a></li>
+                    <li><a href="#" onclick="scrollToSection('contact')">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <h2 class="greeting">Hi,</h2>
+            <h1>I'm Den</h1>
+            <p>Web Designer</p>
+            <div>
+                <button type="button" onclick="scrollToSection('contact')"><span></span>Contact</button>
+            </div>
+        </div>
+    </div>
+    
+    <section id="about" class="section">
+        <div class="video-background">
+            <video autoplay loop muted>
+                <source src="video.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="container">
+            <div class="about description">
+                <h2>About</h2>
+                <p>Welcome to my portfolio website! I am a passionate web designer with expertise in creating stunning and user-friendly websites. With a keen eye for design and attention to detail, I strive to deliver exceptional web experiences that leave a lasting impression.</p>
+                <p>Through my years of experience, I have developed a strong skill set in HTML, CSS, JavaScript, and other web technologies. I love combining creativity with technical knowledge to bring ideas to life and create visually appealing and functional websites.</p>
+                <p>Feel free to explore my portfolio and get in touch to discuss your web design needs. I look forward to collaborating with you and creating something amazing!</p>
+              
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="services" class="section">
+        <div class="container">
+            <div class="services description">
+                <h2>Services</h2>
+                <p>Here are some of the services I offer:</p>
+                <ul>
+                    <li>Website design and development</li>
+                    <li>Responsive web design</li>
+                    <li>UI/UX design</li>
+                    <li>Front-end development</li>
+                    <li>Website maintenance and updates</li>
+                </ul>
+                <p>Whether you need a brand new website or want to enhance your existing site, I can help you achieve your goals with my expertise and creativity.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact description">
+                <h2>Contact</h2>
+                <p>Let's discuss your project! Feel free to reach out to me:</p>
+                <ul>
+                    <li>Email: den@example.com</li>
+                    <li>Phone: 123-456-7890</li>
+                    <li>Address: 123 Main Street, City, Country</li>
+                </ul>
+                <p>You can also connect with me on social media:</p>
+                <ul>
+                    <li><a href="https://www.twitter.com">Twitter</a></li>
+                    <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+                    <li><a href="https://www.github.com">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <script>
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    
+        // Add event listeners to the navigation links
+        const navLinks = document.querySelectorAll('.navbar ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent default link behavior
+                const sectionId = this.getAttribute('href').substring(1); // Get the section ID from the href attribute
+                scrollToSection(sectionId); // Call the scrollToSection function with the section ID
+            });
+        });
+    </script>
+    
+</body>
+</html>
